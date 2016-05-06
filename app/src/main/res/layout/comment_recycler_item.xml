@@ -47,14 +47,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="2dp"
-                android:text="晴天间白白'"
+                android:text="火星网友'"
                 android:textSize="14sp" />
 
 
             <ImageView
                 android:id="@+id/comment_vote_icon"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"

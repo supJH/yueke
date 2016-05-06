@@ -1,6 +1,8 @@
 package com.android.jh.yueke.fragment.main;
 
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -22,7 +24,10 @@ import com.android.jh.yueke.net.NetAccessUtils;
 import com.android.jh.yueke.net.YuekeClient;
 import com.android.jh.yueke.utils.CacheUtils;
 import com.android.jh.yueke.view.RecyclerItemDecoration;
+import com.android.jh.yueke.view.RoundImageHelper;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import org.json.JSONObject;
 
@@ -48,6 +53,9 @@ public class CommentFragment extends Fragment {
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private HotCommentRecyclerAdapter mAdapter;
     private RecyclerView mRecyclerView;
+
+
+
 
     public CommentFragment() {
         super();

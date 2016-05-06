@@ -152,7 +152,6 @@ public class HotCommentRecyclerAdapter extends RecyclerView.Adapter {
             commentInfoTv = (TextView) itemView.findViewById(R.id.comment_location_and_time);
             commentContentTv = (TextView) itemView.findViewById(R.id.comment_location_and_time);
 
-
         }
 
         @Override
