@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,9 @@ import com.android.jh.yueke.R;
 import com.android.jh.yueke.activity.YuekeDetailActivity;
 import com.android.jh.yueke.entity.Comment;
 import com.android.jh.yueke.entity.HeadLine;
+import com.android.jh.yueke.view.RoundImageHelper;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -37,10 +41,30 @@ public class HotCommentRecyclerAdapter extends RecyclerView.Adapter {
     private String commentInfo;
     private String commentContent;
 
+    private ViewHolder viewHolder;
+
     public static final String POST_ID = "post_id";
     public static final String SOURCE = "source";
     public static final String TITLE = "title";
     public static final String P_TIME = "p_time";
+
+    private Target userImgTarget = new Target() {
+        @Override
+        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+            //getRoundedConnerBitmap，绘制成圆形的Bitmap
+            ((ViewHolder) viewHolder).userIv.setImageBitmap(RoundImageHelper.getRoundedCornerBitmap(bitmap, 200));
+        }
+
+        @Override
+        public void onBitmapFailed(Drawable errorDrawable) {
+//            Toast.makeText(getApplicationContext(),"失败。。。",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+        }
+    };
 
     public HotCommentRecyclerAdapter(Context context) {
         mContext = context;
@@ -60,7 +84,7 @@ public class HotCommentRecyclerAdapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View view = inflater.inflate(R.layout.comment_recycler_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(context, view);
+         viewHolder = new ViewHolder(context, view);
 
         return viewHolder;
     }
@@ -74,8 +98,9 @@ public class HotCommentRecyclerAdapter extends RecyclerView.Adapter {
         commentInfo = comment.getCommentInfo();
         commentContent = comment.getCommentContent();
 
-
-        ((ViewHolder) holder).userNameTv.setText(comment.getUserName());
+        if(userName != null){
+            ((ViewHolder) holder).userNameTv.setText(comment.getUserName());
+        }
         ((ViewHolder) holder).voteCountTv.setText(comment.getVoteNum());
         ((ViewHolder) holder).commentInfoTv.setText(comment.getCommentInfo());
         ((ViewHolder) holder).commentContentTv.setText(comment.getCommentContent());
@@ -83,7 +108,9 @@ public class HotCommentRecyclerAdapter extends RecyclerView.Adapter {
 
         SharedPreferences sp = mContext.getSharedPreferences("Config",Context.MODE_PRIVATE);
         if (!sp.getBoolean("none_pics",false) && imagesrc != null && imagesrc.length() > 0){
-            Picasso.with(mContext).load(imagesrc).into(((ViewHolder) holder).userIv);
+            Picasso.with(mContext).load(imagesrc).into(userImgTarget);
+        }else{
+            Picasso.with(mContext).load(R.drawable.unloadimg).into(userImgTarget);
         }
 
     }
