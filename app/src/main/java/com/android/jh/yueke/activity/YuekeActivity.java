@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.jh.yueke.R;
 import com.android.jh.yueke.adapter.DrawerMenuRecyclerAdapter;
@@ -36,7 +39,7 @@ public class YuekeActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavView;
-    private String[] drawerItemNames = new String[]{"首页","发现","关注","收藏","草稿","提问"};
+    private String[] drawerItemNames = new String[]{"首页", "发现", "关注", "收藏", "草稿", "提问"};
     private String[] itemColor = new String[]{"#0011d9", "#1dc4f7", "#32bfbb", "#ef7521", "#6cc800", "#ffcc00"};
     private RecyclerView mDrawerRecycler;
     private ImageView portraitImage;
@@ -44,6 +47,10 @@ public class YuekeActivity extends AppCompatActivity {
     private TextView changeThemeTv;
 
     private TextView settingsTv;
+
+    private boolean hasPressedBack = false;
+    private long lastPressBack = 0L;
+
     //使用第三方库Picasso，实现URL获取图片
     private Target portraitTarget = new Target() {
         @Override
@@ -89,39 +96,11 @@ public class YuekeActivity extends AppCompatActivity {
 
         mNavView = (NavigationView) findViewById(R.id.nav_view);
         mDrawerRecycler = (RecyclerView) findViewById(R.id.drawer_menu_recycler);
-        RecyclerView.Adapter mAdapter = new DrawerMenuRecyclerAdapter(this,drawerItemNames,mDrawerLayout);
+        RecyclerView.Adapter mAdapter = new DrawerMenuRecyclerAdapter(this, drawerItemNames, mDrawerLayout);
         mDrawerRecycler.setAdapter(mAdapter);
         mDrawerRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         mDrawerRecycler.setHasFixedSize(true);
-
-
-        /*mNavView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                selectDrawerItem(item);
-                return true;
-            }
-        });*/
-
-       /* mNavView.setItemIconTintList(null);
-        for (int i = 0; i < mNavView.getMenu().size() - 2; i++) {
-            MenuItem item = mNavView.getMenu().getItem(i);
-            Drawable drawable = item.getIcon();
-            drawable.setColorFilter(Color.parseColor(itemColor[i]), PorterDuff.Mode.MULTIPLY);
-            item.setIcon(drawable);
-
-        }*/
-
-
-       /* View headerView = getLayoutInflater().inflate(R.layout.nav_header, mNavView, false);
-        ImageView portraitImage = (ImageView) headerView.findViewById(round_portrait_image);
-
-        Drawable drawable = getResources().getDrawable(R.drawable.portrait);
-        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-        portraitImage.setImageBitmap(RoundImageHelper.getRoundedCornerBitmap(bitmap, 200));
-
-        mNavView.addHeaderView(headerView);*/
 
 
         portraitImage = (ImageView) findViewById(R.id.round_portrait_image);
@@ -134,7 +113,7 @@ public class YuekeActivity extends AppCompatActivity {
         settingsTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(YuekeActivity.this,YuekeSettingActivity.class);
+                Intent intent = new Intent(YuekeActivity.this, YuekeSettingActivity.class);
                 mDrawerLayout.closeDrawers();
                 startActivity(intent);
             }
@@ -145,7 +124,7 @@ public class YuekeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences sp = getSharedPreferences("Config", Context.MODE_PRIVATE);
-                boolean isNight = sp.getBoolean("night_theme",false);
+                boolean isNight = sp.getBoolean("night_theme", false);
 
                 if (!isNight) {
                     mColorful.setTheme(R.style.NightTheme);
@@ -161,7 +140,7 @@ public class YuekeActivity extends AppCompatActivity {
 
         setupColorful();
         SharedPreferences sp = getSharedPreferences("Config", Context.MODE_PRIVATE);
-        boolean isNight = sp.getBoolean("night_theme",false);
+        boolean isNight = sp.getBoolean("night_theme", false);
         if (isNight) {
             mColorful.setTheme(R.style.NightTheme);
 
@@ -198,11 +177,11 @@ public class YuekeActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(YuekeActivity.this,YuekeSettingActivity.class);
+            Intent intent = new Intent(YuekeActivity.this, YuekeSettingActivity.class);
             startActivity(intent);
             return true;
-        }else if(id == R.id.action_about){
-            Intent intent = new Intent(YuekeActivity.this,YuekeAboutActivity.class);
+        } else if (id == R.id.action_about) {
+            Intent intent = new Intent(YuekeActivity.this, YuekeAboutActivity.class);
             startActivity(intent);
             return true;
         }
@@ -262,5 +241,28 @@ public class YuekeActivity extends AppCompatActivity {
         } else {
             startActivity(intent);
         }
+    }
+
+    /**
+     * 按两次返回键才会退出，activity
+     */
+    @Override
+    public void onBackPressed() {
+        long currentPressBack = System.currentTimeMillis();
+        if (hasPressedBack) {
+            lastPressBack = currentPressBack;
+            showExitTips();
+        } else {
+            if (currentPressBack - 2000 > lastPressBack) {
+                lastPressBack = currentPressBack;
+                showExitTips();
+            } else {
+                finish();
+            }
+        }
+    }
+
+    public void showExitTips() {
+        Toast.makeText(this, "再按一次返回键退出应用", Toast.LENGTH_SHORT).show();
     }
 }
