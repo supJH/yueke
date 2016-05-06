@@ -1,6 +1,5 @@
 package com.android.jh.yueke.json;
 
-import com.android.jh.yueke.entity.Answer;
 import com.android.jh.yueke.entity.YuekeContents;
 import com.android.jh.yueke.entity.YuekeDetail;
 import com.google.gson.JsonDeserializationContext;

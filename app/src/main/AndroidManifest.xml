@@ -36,7 +36,7 @@
         </receiver>
 
         <activity
-            android:name=".activity.ZhihuSettingActivity"
+            android:name=".activity.YuekeSettingActivity"
             android:label="@string/title_activity_zhihu_setting">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -61,7 +61,7 @@
                 android:value=".activity.YuekeDetailActivity" />
         </activity>
         <activity
-            android:name=".activity.ZhihuAboutActivity"
+            android:name=".activity.YuekeAboutActivity"
             android:label="@string/title_activity_zhihu_about">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

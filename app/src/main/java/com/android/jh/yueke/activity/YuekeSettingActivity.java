@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import com.android.jh.yueke.R;
 import com.android.jh.yueke.fragment.settings.MainSettingsFragment;
 
-public class ZhihuSettingActivity extends SwipeCloseActivity {
+public class YuekeSettingActivity extends SwipeCloseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

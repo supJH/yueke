@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.android.jh.yueke.entity.HeadLine;
 import com.android.jh.yueke.json.HeadlineDetailResponse;
-import com.android.jh.yueke.json.HomeContentResponse;
 
 import java.io.BufferedReader;
 import java.io.File;

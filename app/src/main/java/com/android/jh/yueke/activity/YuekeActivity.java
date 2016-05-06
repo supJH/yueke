@@ -134,7 +134,7 @@ public class YuekeActivity extends AppCompatActivity {
         settingsTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(YuekeActivity.this,ZhihuSettingActivity.class);
+                Intent intent = new Intent(YuekeActivity.this,YuekeSettingActivity.class);
                 mDrawerLayout.closeDrawers();
                 startActivity(intent);
             }
@@ -198,11 +198,11 @@ public class YuekeActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(YuekeActivity.this,ZhihuSettingActivity.class);
+            Intent intent = new Intent(YuekeActivity.this,YuekeSettingActivity.class);
             startActivity(intent);
             return true;
         }else if(id == R.id.action_about){
-            Intent intent = new Intent(YuekeActivity.this,ZhihuAboutActivity.class);
+            Intent intent = new Intent(YuekeActivity.this,YuekeAboutActivity.class);
             startActivity(intent);
             return true;
         }
