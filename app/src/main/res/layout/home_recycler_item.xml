@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/headline_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/headline_image"
+        android:layout_width="96dp"
+        android:layout_height="78dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/unloadimg" />
+
+
+    <LinearLayout
+        android:id="@+id/home_headline_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/content_item_background"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/recycler_item_text_light">
+
+        <TextView
+            android:id="@+id/headline_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/headline_rl"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/content_item_background"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/recycler_item_text_light">
+
+
+            <TextView
+                android:id="@+id/headline_digest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:text="号称'没有不敢干的事儿，没有干不成的事儿'"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/headline_reply_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="1000跟帖"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

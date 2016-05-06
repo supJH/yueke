@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="RefreshHeaderColors">
+        <item>@color/colorPrimary</item>
+    </array>
+
+    <array name="DrawerIconColors">
+        <item>@color/colorDrawerItemHome</item>
+        <item>@color/colorDrawerItemExplore</item>
+        <item>@color/colorDrawerItemFollow</item>
+        <item>@color/colorDrawerItemCollect</item>
+        <item>@color/colorDrawerItemDraft</item>
+        <item>@color/colorDrawerItemQuestion</item>
+    </array>
+
+    <array name="DrawerIcons">
+        <item>@drawable/ic_drawer_home_pressed</item>
+        <item>@drawable/ic_drawer_explore_pressed</item>
+        <item>@drawable/ic_drawer_follow_pressed</item>
+        <item>@drawable/ic_drawer_collect_pressed</item>
+        <item>@drawable/ic_drawer_draft_pressed</item>
+        <item>@drawable/ic_drawer_question_pressed</item>
+    </array>
+
+    <array name="MsgMailSettingsTexts">
+        <item>@string/private_msg</item>
+        <item>@string/comment_me</item>
+        <item>@string/agree_thank_answer</item>
+        <item>@string/vote_up_comment</item>
+        <item>@string/vote_up_column</item>
+        <item>@string/follow_me</item>
+        <item>@string/follow_column</item>
+        <item>@string/invite_question</item>
+    </array>
+
+
+</resources>

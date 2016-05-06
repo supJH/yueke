@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:background="@drawable/config_item_background"
+        style="@style/SettingsTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:text="接受消息类型" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/dividerGray" />
+
+
+    <TextView
+        android:background="@drawable/config_item_background"
+        android:id="@+id/msg_mail_tv"
+        style="@style/SettingsContentText"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="消息与邮件设置" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividerLightGray" />
+
+
+    <TextView
+        android:background="@drawable/config_item_background"
+        android:id="@+id/push_msg_tv"
+        style="@style/SettingsContentText"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="推送消息设置" />
+
+
+</LinearLayout>

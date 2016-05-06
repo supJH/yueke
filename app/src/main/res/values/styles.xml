@@ -1,0 +1,73 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 日间主题 -->
+    <style name="DayTheme" parent="AppTheme.NoActionBar">
+        <item name="text_color">@color/textDay</item>
+        <item name="text_light_color">@color/textLightDay</item>
+    </style>
+
+    <!-- 夜间主题 -->
+    <style name="NightTheme" parent="AppTheme.NoActionBar">
+        <item name="text_color">@color/textNight</item>
+        <item name="text_light_color">@color/textLightNight</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="tabStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@color/colorPrimary</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextColor">@color/ItemSelectedBackground</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="DrawerItemTextStyle">
+        <item name="android:textColor">?attr/text_color</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="QuestionRecyclerItemText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="AnswerTabTextAppearance">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/textLightDay</item>
+    </style>
+
+    <style name="AnswerDetailContentText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textDay</item>
+    </style>
+
+    <style name="SettingsTitleText">
+        <item name="android:textColor">@color/textDay</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SettingsContentText">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+</resources>

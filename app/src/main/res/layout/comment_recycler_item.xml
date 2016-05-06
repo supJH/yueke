@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/headline_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/comment_user_image"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/unloadimg" />
+
+
+    <LinearLayout
+        android:id="@+id/comment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/comment_user_image"
+        android:background="@drawable/content_item_background"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/recycler_item_text_light">
+
+
+        <RelativeLayout
+            android:id="@+id/comment_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/content_item_background"
+            android:gravity="center_vertical"
+            android:textColor="@color/recycler_item_text_light">
+
+
+            <TextView
+                android:id="@+id/comment_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:text="晴天间白白'"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/comment_vote_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_vote_checked" />
+
+            <TextView
+                android:id="@+id/comment_vote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@id/comment_vote_icon"
+                android:text="3227"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/comment_location_and_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网易河北唐山手机网友 4小时前" />
+
+        <TextView
+            android:id="@+id/comment_time"
+            android:text="杨主任告诉我说，那团啥不是止血纱布，一般情况下，半个月到一个月会就会自己掉出来"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

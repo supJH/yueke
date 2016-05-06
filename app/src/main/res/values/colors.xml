@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorDrawerItemHome">#0077D9</color>
+    <color name="colorDrawerItemExplore">#1DC4F7</color>
+    <color name="colorDrawerItemFollow">#32BFBB</color>
+    <color name="colorDrawerItemCollect">#EF7521</color>
+    <color name="colorDrawerItemDraft">#6CC800</color>
+    <color name="colorDrawerItemQuestion">#FFCC00</color>
+
+    <color name="ItemSelectedBackground">#d6d6d6</color>
+
+    <color name="ContentItemSelectedBackground">@android:color/holo_blue_light</color>
+
+    <color name="ConfigItemBackground">#33000000</color>
+
+    <color name="dividerGray">#66000000</color>
+    <color name="dividerLightGray">#33000000</color>
+
+    <!-- 日间模式 -->
+    <color name="textDay">#CC000000</color>
+    <color name="textLightDay">#BB000000</color>
+
+    <!-- 夜间模式 -->
+    <color name="textNight">#661122</color>
+    <color name="textLightNight">#99661122</color>
+
+
+</resources>

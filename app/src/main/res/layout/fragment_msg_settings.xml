@@ -1,0 +1,8 @@
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/msg_mail_settings_lv"
+    android:divider="@color/dividerLightGray"
+    android:dividerHeight="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.jh.yueke.fragment.settings.MsgSettingsFragment" />

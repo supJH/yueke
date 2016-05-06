@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">阅客</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_question">添加问题</string>
+    <string name="title_activity_answer">AnswerActivity</string>
+
+    <string name="answer_text">
+        我在Buffalo，Binghamton，New York，Stamford， Dallas等美国5个城市每个城市分别生活过半年以上，旅行也把东西岸大城市基本上去过了，应该可以比较客观系统地回答题主。
+        \n\n由于题主没有对“发达”这个概念作出定义，在这里我先把“发达”定义成比其他参照国家先进，而并不是仅仅经济上或者物质上的发达。
+        \n\n作出这样子的定义非常重要，因为我认为大部分国内的朋友对美国的发达都存在一定程度上的误解。
+    </string>
+
+    <string name="base_url">
+        http://c.m.163.com/nc/article
+    </string>
+    <string name="comment_base_url">
+        http://comment.api.163.com/api/json/post/list/new
+    </string>
+
+    <string name="title_activity_zhihu_setting">ZhihuSettingActivity</string>
+
+    <string name="private_msg">有人给我发了私信</string>
+    <string name="comment_me">\@/评论我</string>
+    <string name="agree_thank_answer">赞同/感谢我的答案</string>
+    <string name="vote_up_comment">赞了我的评论</string>
+    <string name="vote_up_column">赞了我的专栏文章</string>
+    <string name="follow_me">有人关注了我</string>
+    <string name="follow_column">有人关注了我的专栏</string>
+    <string name="invite_question">邀请我回答问题</string>
+    <string name="title_activity_swipe_close">SwipeCloseActivity</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_zhihu_about">ZhihuAboutActivity</string>
+
+    <string name="about_text">阅客APP仅供开发学习使用，\n如有侵权立删。</string>
+    <string name="copyright_text">CopyRight © 2016 Hui. All Rights Reserved</string>
+</resources>
